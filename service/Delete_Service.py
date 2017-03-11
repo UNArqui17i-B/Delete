@@ -1,17 +1,32 @@
 from model.File import File
 from couchdb import Server
+import requests
+import json
 
-db = server["File"]
+
+server = Server()
+db = server["file"]
 
 class Delete_Service():
 
-    def __init__(self,id):
+    def __init__(self,_id):
     	#consult_data_base
-    	#file = File.load(db, id)
-    	#if file != None
-        self.delete_file = a_file
+
+        obj = requests.get('http://127.0.0.1:5984/file/_design/new_doc/_view/by_id?key="{0}"'.format(_id))
+        obj= json.loads(obj.text)
+        if len(obj["rows"]) == 1:
+            document = obj["rows"][0]["value"]
+            document = db[document["_id"]]
+            self.document = document
+            self.warning = ""
+        else:
+            self.document = None
+            self.warning = "Unexisting Document"
 
     def delete(self):
-        deleted_file = self.delete_file()
-        db.delete(deleted_file)
-        return "",204
+        if self.document != None:
+            deleted_file = self.document
+            db.delete(self.document)
+            return "",204
+        else:
+            return self.warning,404

@@ -9,4 +9,4 @@ class Delete_Resource(Resource):
         message = response[0]
         code = int(response[1])
         response = {"message":message}
-        return object,code
+        return response,code
