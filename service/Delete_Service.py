@@ -4,14 +4,13 @@ import requests
 import json
 
 
-server = Server()
-db = server["file"]
-
 class Delete_Service():
 
     def __init__(self,_id):
     	#consult_data_base
 
+        server = Server()
+        db = server["file"]
         obj = requests.get('http://127.0.0.1:5984/file/_design/new_doc/_view/by_id?key="{0}"'.format(_id))
         obj= json.loads(obj.text)
         if len(obj["rows"]) == 1:
@@ -24,6 +23,8 @@ class Delete_Service():
             self.warning = "Unexisting Document"
 
     def delete(self):
+        server = Server()
+        db = server["file"]
         if self.document != None:
             deleted_file = self.document
             db.delete(self.document)
