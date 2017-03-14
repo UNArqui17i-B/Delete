@@ -1,4 +1,11 @@
-delete-ms:
-  build: .
+file-db:
+  build: ./db_server
   ports:
-    - "5010:5010"
+    - "5984:5984"
+
+delete-ms:
+  build: ./delete_ms
+  ports:
+    - "4030:4030"
+  links:
+    - file-db

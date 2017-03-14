@@ -6,5 +6,5 @@ RUN pip install -r /tmp/requirements.txt
 ADD . /code
 WORKDIR /code
 
-EXPOSE  5010
+EXPOSE  4030
 CMD ["python", "delete_app.py"]
