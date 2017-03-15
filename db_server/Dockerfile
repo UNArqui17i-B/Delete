@@ -1,3 +1,3 @@
 FROM couchdb
 
-EXPOSE 5984
+EXPOSE 3010

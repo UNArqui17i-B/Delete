@@ -1,7 +1,7 @@
 file-db:
   build: ./db_server
   ports:
-    - "5984:5984"
+    - "3010:5984"
 
 delete-ms:
   build: ./delete_ms
