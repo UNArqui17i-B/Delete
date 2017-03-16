@@ -6,7 +6,7 @@ import json
 host = "192.168.99.101"
 port = "3010"
 url = "http://{0}:{1}/".format(host,port)
-server = Server()
+server = Server(url=url)
 
 class Delete_Service:
 
