@@ -8,6 +8,6 @@ class File(Document):
 	extension = TextField()
 	uploaded_date = DateTimeField(default = datetime.now())
 	expiring_date = DateTimeField(default = datetime.now() + timedelta(days=7))
-	owner= IntegerField()
+	owner= TextField()
 	emails = ListField(TextField)
-	attachment = TextField()
+	attachment = Document()
