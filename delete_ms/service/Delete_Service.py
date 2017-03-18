@@ -14,14 +14,11 @@ class Delete_Service:
     def __init__(self,id):
     	#consult_data_base
         db = server["file"]
-        obj = requests.get('{0}file/_design/new_doc/_view/by_id?key="{1}"'.format(url,id))
-        obj= json.loads(obj.text)
-        if len(obj["rows"]) == 1:
-            document = obj["rows"][0]["value"]
-            document = db[document["_id"]]
-            self.document = document
+        try:
+            obj= db[str(id)]
+            self.document = obj
             self.warning = ""
-        else:
+        except:
             self.document = None
             self.warning = "Unexisting Document"
 
