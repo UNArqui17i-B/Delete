@@ -27,7 +27,7 @@ class Delete_Service:
         db = server["file"]
         if self.document != None:
             deleted_file = self.document
-            db.delete(self.document)
+            db.delete(deleted_file)
             return "",204
         else:
             return self.warning,404
