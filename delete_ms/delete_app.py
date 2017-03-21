@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource
 from resource.Delete_Resource import Delete_Resource
-from os import env
+from os import environ
 
 app = Flask(__name__,static_folder="static");
 api = Api(app)
@@ -15,4 +15,4 @@ def hello_docker():
 if __name__ == "__main__":
     app.debug = True
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-    app.run(host=env["BIND_ADDRESS"],port=env["HOST_PORT"])
+    app.run(host=environ["BIND_ADDRESS"],port=environ["HOST_PORT"])
