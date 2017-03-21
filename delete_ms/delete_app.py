@@ -5,7 +5,7 @@ from resource.Delete_Resource import Delete_Resource
 app = Flask(__name__,static_folder="static");
 api = Api(app)
 
-api.add_resource(Delete_Resource,"/delete/<int:id>")
+api.add_resource(Delete_Resource,"/delete/<string:id>")
 
 @app.route("/")
 def hello_docker():

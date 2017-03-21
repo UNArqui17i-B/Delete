@@ -8,7 +8,7 @@ host = "192.168.99.101"
 port = "3010"
 url = "http://{0}:{1}/".format(host,port)
 server = Server(url=url)
-db = server["file"]
+db = server["blinkbox_files"]
 
 class File(Document):
 
