@@ -6,7 +6,7 @@ file-db:
 delete-ms:
   build: ./delete_ms
   environment:
-      HOST_PORT: '4030'
+      HOST_PORT: 4030
       BIND_ADDRESS: '0.0.0.0'
       HOST_DATABASE: '192.168.99.101'
       HOST_DATABASE_PORT: '3010'

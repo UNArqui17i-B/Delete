@@ -15,4 +15,4 @@ def hello_docker():
 if __name__ == "__main__":
     app.debug = True
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
-    app.run(host=environ["BIND_ADDRESS"],port=environ["HOST_PORT"])
+    app.run(host=environ["BIND_ADDRESS"],port=int(environ["HOST_PORT"]))
