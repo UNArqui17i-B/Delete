@@ -10,7 +10,7 @@ api.add_resource(Delete_Resource,"/delete/<string:id>")
 
 @app.route("/")
 def hello_docker():
-    return "Hello DOCKER"
+    return "Hello DOCKER & Delete"
 
 if __name__ == "__main__":
     app.debug = True
