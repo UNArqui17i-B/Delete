@@ -7,10 +7,10 @@ delete-ms:
   build: ./delete_ms
   environment:
       HOST_PORT: 4030
-      BIND_ADDRESS: '0.0.0.0'
-      HOST_DATABASE: '192.168.99.101'
-      HOST_DATABASE_PORT: '3010'
-      DATABASE_NAME: "blinkbox_files"
+      HOST_URL: '0.0.0.0'
+      DB_URL: '192.168.99.101'
+      DB_PORT: '3010'
+      DB_NAME: "blinkbox_files"
   ports:
     - "4030:4030"
   links:

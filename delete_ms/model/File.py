@@ -5,9 +5,9 @@ from couchdb import Server
 from os import environ
 
 
-host = environ["HOST_DATABASE"]
-port = environ["HOST_DATABASE_PORT"]
-database = environ["DATABASE_NAME"]
+host = environ["DB_URL"]
+port = environ["DB_PORT"]
+database = environ["DB_NAME"]
 url = "http://{0}:{1}/".format(host,port)
 server = Server(url=url)
 
