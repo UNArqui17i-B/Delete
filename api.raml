@@ -7,3 +7,9 @@ mediaType: application/json
     description: Delete file
     delete:
         description: Delete the matching file
+
+/delete_expiring_files/{exp_date}
+	description : Delete Expiring Files
+	delete:
+		description: Delete the files that have an expiring date before exp_date
+

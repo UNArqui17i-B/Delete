@@ -1,7 +1,0 @@
-class File():
-
-    def __init__(self,id):
-        self.id = id
-
-    def delete_file(self):
-        return "File with id:{0} was deleted".format(self.id), 204
