@@ -12,11 +12,10 @@ api.add_resource(Delete_Expiring_Resource,"/delete/bulk/<int:exp_date>")
 
 @app.route("/")
 def hello_docker():
-    print("Hello DOCKER & Delete")
+    return "Hello DOCKER & Delete"
 
 
 if __name__ == "__main__":
     app.debug = True
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
     app.run(host=environ["HOST_URL"],port=int(environ["HOST_PORT"]))
-    
