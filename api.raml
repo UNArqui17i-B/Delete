@@ -3,7 +3,13 @@ title: Delete files API
 baseUri: http://localhost:4030
 mediaType: application/json
 
-/delete/{id}:
+/delete/file/{id}:
     description: Delete file
     delete:
         description: Delete the matching file
+
+/delete/bulk/{exp_date}
+	description : Delete Expiring Files
+	delete:
+		description: Delete the files that have an expiring date before exp_date
+

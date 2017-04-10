@@ -23,6 +23,15 @@ class File(Document):
     	db = server[database]
         db.delete(deleted_file)
 
+    @staticmethod
+    def get_expiring_docs(exp_date):
+        ids = []
+        db = server["blinkbox_files"]
+        results = db.view('_design/exp_date/_view/get_by_exp_date',startkey=0, endkey=exp_date)
+        for row in results:
+            ids.append(row.id)
+        return ids
+
 
 
 			
