@@ -7,8 +7,8 @@ from os import environ
 app = Flask(__name__,static_folder="static");
 api = Api(app)
 
-api.add_resource(Delete_Resource,"/delete/<string:id>")
-api.add_resource(Delete_Expiring_Resource,"/delete_expiring_files/<int:exp_date>")
+api.add_resource(Delete_Resource,"/delete/file/<string:id>")
+api.add_resource(Delete_Expiring_Resource,"/delete/bulk/<int:exp_date>")
 
 @app.route("/")
 def hello_docker():
@@ -19,5 +19,4 @@ if __name__ == "__main__":
     app.debug = True
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
     app.run(host=environ["HOST_URL"],port=int(environ["HOST_PORT"]))
-    #app.run(port=8080)
     

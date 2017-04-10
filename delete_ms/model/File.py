@@ -8,9 +8,6 @@ from os import environ
 host = environ["DB_URL"]
 port = environ["DB_PORT"]
 database = environ["DB_NAME"]
-#database = "blinkbox_files"
-#host = "127.0.0.1"
-#port = "5984"
 url = "http://{0}:{1}/".format(host,port)
 server = Server(url=url)
 
